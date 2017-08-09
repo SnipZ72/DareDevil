@@ -4,10 +4,10 @@
 
 
 <?php
-
+phpinfo();
 $conn = mysqli_connect("localhost", "root", "root", "dddb");
 
-$sql = "SELECT * FROM posts";
+$sql = "SELECT * FROM post";
 
 $result = mysqli_query($conn, $sql);
 

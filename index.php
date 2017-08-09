@@ -1,5 +1,7 @@
 <html>
-<head>Dare Devil</head>
+<link rel="stylesheet" href="style.css">
+<title>Dare Devil</title>
+<head><span class="headBanner"><span class="title">Dare Devil</span></span></head>
 <body>
 
 <?php

@@ -4,7 +4,7 @@
 
 
 <?php
-phpinfo();
+
 $conn = mysqli_connect("localhost", "root", "root", "dddb");
 
 $sql = "SELECT * FROM post";

@@ -1,12 +1,21 @@
 <html>
-<body>
-  <script>
+<script>
+function login() {
+FB.getLoginStatus(function(response) {
+  if (response.status === 'connected') {
+    alert('Logged in.');
+  }
+  else {
+    alert("Youre not logged in. Fuck off");
+  }
+});
+}
+
   window.fbAsyncInit = function() {
     FB.init({
-      appId            : 'your-app-id',
-      autoLogAppEvents : true,
-      xfbml            : true,
-      version          : 'v2.10'
+      appId      : '343499226071421',
+      xfbml      : true,
+      version    : 'v2.10'
     });
     FB.AppEvents.logPageView();
   };
@@ -18,8 +27,15 @@
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-</script>
 
+</script>
+<head>Dare Devil</head>
+
+    
+<body>
+<p>Test</p>
+<button onclick="login();">Jew</button>
 
 </body>
 </html>
+

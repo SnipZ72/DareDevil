@@ -2,7 +2,52 @@ body{
 background-color: lightgrey;	
 }
 .headBanner{
-	position: justify;
-	text-al
-	border: 5px solid blue;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	background-color: darkblue;
+	border: 5px solid darkblue;
 }
+.titleText{
+	text-align:center;
+	color: white;
+	font-size: 40;
+}
+.headBtnLogin{
+	position: absolute;
+	top:0px;
+	right: 200px;
+	border: 5px solid #2F5D9B;
+	border-radius: 10px;
+	font-size: 30px;
+	color:white;
+}
+.headBtnSignUp{
+	position: absolute;
+	top:0px;
+	right: 50px;
+	border: 5px solid #2F5D9B;
+	border-radius: 10px;
+	font-size: 30px;
+	color:white;
+}
+.posts{
+	position:relative;
+	border: 5px solid #2F5D9B;
+	top: 50px;
+	text-align: center;
+	margin: 5px;
+	background-color: #2C72D2;
+	border-radius: 15px;
+	color:white;
+	font-size: 30px;
+	max-width: 50%;
+	
+	
+}
+/*
+#FFCDAB
+
+
+#FFDEC7*/

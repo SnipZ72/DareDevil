@@ -7,9 +7,7 @@ FB.getLoginStatus(function(response) {
 //    var accessToken = response.authResponse.accessToken;
     var urlpic = " http://graph.facebook.com/" + uid + "/picture?type=normal";
     document.getElementById('jewbtn').src = urlpic;
-    FB.api('/me', function(response) {
-                alert(response)
-                });
+    document.write(uid);
   }
   else {
     alert("not logged in");
@@ -44,7 +42,7 @@ FB.getLoginStatus(function(response) {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 <style>
-  
+
 
 </style>
 

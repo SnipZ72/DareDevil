@@ -1,36 +1,37 @@
 <html>
 <script>
 
+function sendfb(uidfb,response) {
+  var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        alert(xhttp.reponseText);
+    }
+};
+
+var urltosend = "/loginfb.php?fbid=" + uidfb + "&name=" + response.name;
+xhttp.open("GET", urltosend, true);
+xhttp.send();
+}
+
+
+
 function login() {
 FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     var uid = response.authResponse.userID;
     var urlpic = " http://graph.facebook.com/" + uid + "/picture?type=normal";
     document.getElementById('jewbtn').src = urlpic;
-    sendfb(uid);
+
+    FB.api('/me', function(responseFromFb) {
+                    sendfb(uid,responseFromFb);
+      });
   }
+
   else {
     alert("not logged in");
   }
 });
-}
-
-function sendfb(uidfb) {
-  var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        alert("done");
-    }
-};
-
-
-
-xhttp.open("GET", "http://70.29.80.78/Public/DareDevil/DareDevil/loginfb.php?fbid=" + uidfb + "&name=" + FB.api('/me', function(response) {
-                return respone.name;
-      });, true);
-xhttp.send();
-
-
 }
 
   window.fbAsyncInit = function() {
@@ -49,16 +50,9 @@ xhttp.send();
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-  document.getElementById("fbloginbtn").hide();
 </script>
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+
 <style>
 
 

@@ -1,9 +1,9 @@
 <html>
 <link rel="stylesheet" href="style.css">
 <title>Dare Devil</title>
-<head>DD</head>
+<head></head>
 <body>
-<br><span class="headBanner"><span class="titleText">Dare Devil</span><span class="headBtnLogin">Login</span><span class="headBtnSignUp">Sign Up</span></span>
+<br><span class="headBanner"><span class="titleText"><img src="ddLogo.png"><a href="index.php"></a></img></span><span class="headBtnLogin"><a href="mytest.html">Login</a></span><span class="headBtnSignUp">Sign Up</span></span>
 
 
 
@@ -22,38 +22,6 @@ if (mysqli_num_rows($result) > 0) {
     echo "<div class='posts'><br>" . "<div class='posts-text'><a href='#" . $row["text"] . "'> ".$row['text']."</a></div>" ."</div>";
 	//echo "<button id='".$curr."'> ". $row["text"] . "</button>";
 	//echo "<button id='myBtn'>test</button>";
-	
-	echo '
-
-	<div id="'.$row["text"].'" class="modal">
-  <div class="modal-content">
-    <div class="modal-body">
-	<p>'.$row["text"].'</p>
-    </div>
-  </div>
-
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById("'.$row["text"].'");
-
-// Get the button that opens the modal
-var btn = document.getElementById('.$curr.');
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>';
 	
   }
 }

@@ -1,23 +1,24 @@
 <html>
 <body>
 <style>
-body { padding: 2em; }
 
 
 /* Shared */
+
 .loginBtn {
   box-sizing: border-box;
   position: relative;
   /* width: 13em;  - apply for fixed size */
-  margin: 0.2em;
   padding: 0 15px 0 46px;
   border: none;
-  text-align: left;
+  text-align: center;
   line-height: 34px;
   white-space: nowrap;
   border-radius: 0.2em;
   font-size: 16px;
   color: #FFF;
+  margin:0 auto;
+  display:block;
 }
 .loginBtn:before {
   content: "";
@@ -53,12 +54,26 @@ body { padding: 2em; }
   background-image: linear-gradient(#5B7BD5, #4864B1);
 }
 
+.divlog div {
+	content:""; 
+  background: black; 
+  position: absolute; 
+  bottom: 0; 
+  left: 0; 
+    width: 1px;
+  border-radius:7px; 
+  border-style: solid; 
+  background-color: #ADD8E6; 
+}
 
 </style>
 
 
-
+<div class="divlog">
+<p style="text-align:center;">Log in</p>
 <button id="loginBtn" class="loginBtn loginBtn--facebook">Login with Facebook</button>
+</div>
+
 <div id="response"></div>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

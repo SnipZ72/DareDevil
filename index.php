@@ -18,6 +18,12 @@
     lol();
   };
 
+function getName() {
+	  FB.api('/me', function(response) {
+
+	  	document.getElementById('name').innerHTML = response.name;
+    });
+}
   function lol() {
   FB.getLoginStatus(function(response) {
   	if (response.status == 'connected') {

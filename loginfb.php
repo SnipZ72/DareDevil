@@ -7,6 +7,9 @@ $name = $_GET['name'];
 $ip = $_SERVER['REMOTE_ADDR'];
 $time = time();
 
+$fbid = mysqli_real_escape_string ( $conn , $fbid );
+$name = mysqli_real_escape_string ( $conn , $name );
+
 if(!isset($fbid) || !isset($name)) {
 	echo "a var is not set";
 }

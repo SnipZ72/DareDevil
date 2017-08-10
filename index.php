@@ -6,13 +6,7 @@
 <br><span class="headBanner"><span class="titleText">Dare Devil</span><span class="headBtnLogin">Login</span><span class="headBtnSignUp">Sign Up</span></span>
 
 
-<div id="myModal" class="modal">
-  <div class="modal-content">
-    <div class="modal-body">
-    </div>
-  </div>
 
-</div>
 
 <?php
 
@@ -22,21 +16,27 @@ $sql = "SELECT * FROM post";
 
 $result = mysqli_query($conn, $sql);
 $curr = 0;
-$currM = 0;
 if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
 		$curr += 1;
-		$currM -= -5;
-    echo "<div class='posts'><br>" . "<div class='posts-text'>" . $row["text"] . "</div>" ."</div>";
-	echo "<button id='".$curr."'> ". $row["text"] . "</button>";
+    echo "<div class='posts'><br>" . "<div class='posts-text'><a href='#" . $row["text"] . "'> ".$row['text']."</a></div>" ."</div>";
+	//echo "<button id='".$curr."'> ". $row["text"] . "</button>";
 	//echo "<button id='myBtn'>test</button>";
 	
 	echo '
 
+	<div id="'.$row["text"].'" class="modal">
+  <div class="modal-content">
+    <div class="modal-body">
+	<p>'.$row["text"].'</p>
+    </div>
+  </div>
+
+</div>
 
 <script>
 // Get the modal
-var modal = document.getElementById("myModal");
+var modal = document.getElementById("'.$row["text"].'");
 
 // Get the button that opens the modal
 var btn = document.getElementById('.$curr.');

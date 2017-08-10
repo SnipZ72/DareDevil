@@ -1,0 +1,104 @@
+body{
+background-color: #73859F;	
+}
+.headBanner{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	background-color: darkblue;
+	border: 5px solid darkblue;
+}
+.titleText{
+	text-align:center;
+	color: white;
+	font-size: 40;
+}
+.headBtnLogin{
+	position: absolute;
+	top:0px;
+	right: 200px;
+	border: 5px solid #2F5D9B;
+	border-radius: 10px;
+	font-size: 30px;
+	color:white;
+}
+.headBtnSignUp{
+	position: absolute;
+	top:0px;
+	right: 50px;
+	border: 5px solid #2F5D9B;
+	border-radius: 10px;
+	font-size: 30px;
+	color:white;
+}
+.posts{
+	position:relative;
+	border: 5px solid #2F5D9B;
+	top: 50px;
+	text-align: center;
+	margin: 5 auto;
+	background-color: #2C72D2;
+	border-radius: 15px;
+	max-width: 50%;
+}
+.posts-text{
+	color:white;
+	font-size: 30px;
+	top: 0;
+	margin: auto;
+}
+.topdaily{
+	position:absolute;
+	top: 200px;
+	left: 0px;
+	border: 5px solid yellow;
+	height: 150px;
+}
+.topdname{
+	bottom:0px;
+}
+
+/*
+#FFCDAB
+
+
+#FFDEC7*/
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+

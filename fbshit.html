@@ -1,15 +1,36 @@
 <html>
 <script>
+
 function login() {
 FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
-    alert("You are logged in");
+    var uid = response.authResponse.userID;
+    var urlpic = " http://graph.facebook.com/" + uid + "/picture?type=normal";
+    document.getElementById('jewbtn').src = urlpic;
+    sendfb(uid);
   }
   else {
-    
-    document.getElementById("fbloginbtn").show();
+    alert("not logged in");
   }
 });
+}
+
+function sendfb(uidfb) {
+  var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        alert("done");
+    }
+};
+
+
+
+xhttp.open("GET", "http://70.29.80.78/Public/DareDevil/DareDevil/loginfb.php?fbid=" + uidfb + "&name=" + FB.api('/me', function(response) {
+                return respone.name;
+      });, true);
+xhttp.send();
+
+
 }
 
   window.fbAsyncInit = function() {
@@ -30,13 +51,28 @@ FB.getLoginStatus(function(response) {
    }(document, 'script', 'facebook-jssdk'));
   document.getElementById("fbloginbtn").hide();
 </script>
-<head>Dare Devil</head>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<style>
+
+
+</style>
+
+<head>
+  <title>DareDevil</title>
+</head>
 
     
 <body>
-<p>Test</p>
-<button onclick="login();">Jew</button>
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();" id="fbloginbtn"></fb:login-button>
+<button onclick="login();">Jew</button><br>
+<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="true" data-auto-logout-link="false" data-use-continue-as="true"></div>
+<img id="jewbtn"></img>
 
 </body>
 </html>

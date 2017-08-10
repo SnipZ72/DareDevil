@@ -58,7 +58,7 @@ background-color: #73859F;
 .topdname{
 	bottom:0px;
 }
-a{
+a:active{
 	text-decoration: none;
 	
 }

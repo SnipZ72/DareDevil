@@ -6,6 +6,14 @@
 <br><span class="headBanner"><span class="titleText">Dare Devil</span><span class="headBtnLogin">Login</span><span class="headBtnSignUp">Sign Up</span></span>
 
 
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-body">
+    </div>
+  </div>
+
+</div>
+
 <?php
 
 $conn = mysqli_connect("localhost", "root", "root", "dddb");
@@ -24,18 +32,11 @@ if (mysqli_num_rows($result) > 0) {
 	//echo "<button id='myBtn'>test</button>";
 	
 	echo '
-	<div id="'.$currM.'" class="modal">
-  <div class="modal-content">
-    <div class="modal-body">
-	<p>'.$row["text"].'</p>
-    </div>
-  </div>
 
-</div>
 
 <script>
 // Get the modal
-var modal = document.getElementById("'.$currM.'");
+var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
 var btn = document.getElementById('.$curr.');
@@ -63,7 +64,7 @@ window.onclick = function(event) {
 
 <div class="topdaily">
 
-<img src="ddLogo.png" alt="pic" width="100" height="100"><br>
+<img src="195478.JPG" alt="pic" width="100" height="100"><br>
 
 <span class="topdname">Jason Azevedo</span>
 

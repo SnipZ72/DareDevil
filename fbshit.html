@@ -1,13 +1,35 @@
 <html>
 <script>
+
+function sendfb(uidfb,response) {
+  var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        alert(xhttp.reponseText);
+    }
+};
+
+var urltosend = "/loginfb.php?fbid=" + uidfb + "&name=" + response.name;
+xhttp.open("GET", urltosend, true);
+xhttp.send();
+}
+
+
+
 function login() {
 FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
-    alert("You are logged in");
+    var uid = response.authResponse.userID;
+    var urlpic = " http://graph.facebook.com/" + uid + "/picture?type=normal";
+    document.getElementById('jewbtn').src = urlpic;
+
+    FB.api('/me', function(responseFromFb) {
+                    sendfb(uid,responseFromFb);
+      });
   }
+
   else {
-    
-    document.getElementById("fbloginbtn").show();
+    alert("not logged in");
   }
 });
 }
@@ -28,15 +50,23 @@ FB.getLoginStatus(function(response) {
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-  document.getElementById("fbloginbtn").hide();
 </script>
-<head>Dare Devil</head>
+<div id="fb-root"></div>
+
+<style>
+
+
+</style>
+
+<head>
+  <title>DareDevil</title>
+</head>
 
     
 <body>
-<p>Test</p>
-<button onclick="login();">Jew</button>
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();" id="fbloginbtn"></fb:login-button>
+<button onclick="login();">Jew</button><br>
+<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="true" data-auto-logout-link="false" data-use-continue-as="true"></div>
+<img id="jewbtn"></img>
 
 </body>
 </html>

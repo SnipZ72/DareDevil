@@ -16,11 +16,22 @@ $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
-    echo "<div class='posts'><br>" . $row["text"] . "</div>";
+    echo "<div class='posts'><br>" . "<div class='posts-text'>" . $row["text"] . "</div>" ."</div>";
+	//echo "<button id='".$row['text']."'> ". $row["text"] . "</button>";
+	//echo "<button id='test'>test</button>";
+	
   }
 }
 
 ?>
+
+<div class="topdaily">
+
+<img src="ddLogo.png" alt="pic" width="100" height="100"><br>
+
+<span class="topdname">Jason Azevedo</span>
+
+</div>
 
 </body>
 </html>
